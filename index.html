@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Palestine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #070707;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #212121;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #333;
+            border-radius: 8px;
+        }
+        nav ul li {
+            margin: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .hero {
+            background-image: url('https://images.pexels.com/photos/8721399/pexels-photo-8721399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+        .hero p {
+            font-size: 1.4em;
+            margin: 10px 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero button {
+            padding: 15px 30px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+            z-index: 2;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .hero button:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #d32f2f;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #d32f2f;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        .card img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #212121;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .footer-content p {
+            margin: 0;
+            font-size: 1em;
+        }
+        .donate button, .contact button {
+            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .donate button:hover, .contact button:hover {
+            background: linear-gradient(135deg, #b71c1c, #d32f2f);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .about-card {
+            background-color: #fffdfd;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .about-card img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #d32f2f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .about-card img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .about-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        .about-card ul li {
+            margin-bottom: 10px;
+        }
+        .team-member {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Support Palestine</h1>
+    <nav>
+        <ul>
+            <li><a href="#impact-stories">Impact on it</a></li>
+            <li><a href="#latest-news">Latest News</a></li>
+            <li><a href="#volunteer">Volunteer</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Stand with Palestinians</h1>
+    <p>Your support can make a big difference. stand with those in need</p>
+    <button onclick="window.location.href='#donate'">Donate Now</button>
+</section>
+
+<div class="content">
+
+    <section id="impact-stories" class="section impact-stories">
+        <h2 class="section-title">Impact Stories</h2>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/5697255/pexels-photo-5697255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Aid distribution to Palestinians">
+            <h3>Empowering Families</h3>
+            <p>Learn how your donations have transformed lives and brought hope to many families.</p>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/236x/48/2a/0b/482a0b496b1e730cd7f1c3292744dc6e.jpg" alt="Shelter for displaced families">
+            <h3>Providing Shelter</h3>
+            <p>Discover the stories of displaced families who have found safety and support through our initiatives.</p>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/236x/bc/70/7b/bc707b12b1f7f2e0afefa25542678ecb.jpg" alt="Healthcare support">
+            <h3>Healthcare Support</h3>
+            <p>Learn about the healthcare services provided to support the well-being of affected individuals.</p>
+        </div>
+    </section>
+
+    <section id="latest-news" class="section latest-news">
+        <h2 class="section-title">Latest News</h2>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/10010406/pexels-photo-10010406.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="News about Palestine">
+            <h3>Recent Updates</h3>
+            <p>Stay updated with the latest news and developments regarding our projects and initiatives.</p>
+        </div>
+    </section>
+
+    <section id="volunteer" class="section volunteer">
+        <h2 class="section-title">Volunteer</h2>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Volunteers in action">
+            <h3>Join Us</h3>
+            <p>Learn how you can get involved and make a difference as a volunteer.</p>
+        </div>
+    </section>
+
+    <section id="donate" class="section donate">
+        <h2 class="section-title">Donate</h2>
+        <div class="card">
+            <p>Your generous donations help us provide aid and support to those in need. Every contribution counts.</p>
+            <a href="https://www.paypal.com/donate?business=YOUR_PAYPAL_EMAIL" target="_blank">
+                <button>Donate via PayPal</button>
+            </a>
+            <div style="margin-top: 20px;">
+                <p>For donations via JazzCash, please use the following details:</p>
+                <p style="font-size: 1.2em;"><strong>JazzCash Account:</strong> 0307-2003783</p>
+                <p style="font-size: 1.2em;"><strong>Account Name:</strong> Hasan Ali</p>
+                <p>After you donate, kindly email us at <a href="reomen.ashu106@gmail.com" style="color: #d32f2f;">reomen.ashu106@gmail.com</a> with your transaction ID for confirmation.</p>
+                <button onclick="copyJazzCashDetails()">Copy JazzCash Details</button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function copyJazzCashDetails() {
+            const text = "JazzCash Account: 0307-2003783\nAccount Name: Hasan ali";
+            navigator.clipboard.writeText(text).then(() => {
+                alert("JazzCash details copied to clipboard!");
+            });
+        }
+    </script>
+    
+
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="card">
+            <p>If you have any questions or need more information, feel free to reach out to us.</p>
+            <p>Email: reomen.ashu106@gmail.com</p>
+            <p>Phone: 03072003783</p>
+            <a href="reomen.ashu106@gmail.com">
+                <button>Contact Us</button>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-card">
+            <h3>Our Mission</h3>
+            <p>We are dedicated to providing aid and support to Palestinians affected by conflict and hardship. Our mission is to deliver essential services and create lasting positive impact through your generous support.</p>
+            <h3>Our Team</h3>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="https://i.pinimg.com/236x/04/01/d3/0401d376fdc8f850eca3fe5091bf25bd.jpg" alt="Arsalan Ali">
+                    <p><strong>Founder & CEO:</strong> Arsalan Ali</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://i.pinimg.com/236x/4d/83/45/4d8345211bfc339e71311ebdc73961ac.jpg" alt="Aarij Ahmed">
+                    <p><strong>Project Manager:</strong> Aarij Ahmed</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://i.pinimg.com/236x/64/9c/77/649c779da4180f7807b4b91cd14c6171.jpg" alt="Hussain">
+                    <p><strong>Communications Lead:</strong> Hussain</p>
+                </div>
+            </div>
+            <h3>What We Can Achieve Together</h3>
+            <p>Your donations help us achieve the following:</p>
+            <ul>
+                <li>Provide emergency relief and aid to families in need.</li>
+                <li>Offer healthcare services and support to the vulnerable.</li>
+                <li>Build and maintain shelters for displaced individuals.</li>
+                <li>Support educational programs for children and youth.</li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Support Palestine. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
+
+
+
+
+
